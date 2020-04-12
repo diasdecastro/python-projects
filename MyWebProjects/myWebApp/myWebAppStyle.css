@@ -1,0 +1,8 @@
+body {
+    background-color: yellow;
+}
+
+#contentBox{
+    width: 1000px;
+    background-color: green;
+}
