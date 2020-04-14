@@ -9,18 +9,16 @@
     <script type="text/javascript" src="myWebAppScript.js"></script>
 
 </head>
-<body>    
-    <h1>Hello World</h1>        
-    
+<body>
     <div id="root">
-        <div id="contentBox">
-            <script>
-            drawLines();
-            </script>
-        </div>
+              
+        <div id="contentBox"></div>
+        <script>
+            unsortedArr = createUnsortedArray();
+            drawLines(unsortedArr);                
+        </script>
+        <button onclick="generateArray();">Generete new Array</button>
+        <button onclick="bubbleSort(unsortedArr);">Bubble Sort</button> 
     </div>
-    <script>
-        hello();
-    </script>
 </body>
 </html>
