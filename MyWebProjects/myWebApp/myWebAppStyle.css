@@ -1,12 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
 body {
-    background-color: yellow;
+    background-color: rgb(250, 250, 250);
 }
 
-#contentBox{
+#centerBox{
+    /*background-image: url("./images/tvTemplateOn0.jpg");*/
+    background-size: 100% 100%;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+    height: 35em;
+    width: 55em;
+    box-sizing: content-box;
+    margin: 5% auto 5% auto;
+    padding: 5% 15%;
+}
+
+
+#centerContent {
     display: flex;
     justify-content: center;
-    background-color: white;
-    margin: 0px 10% 0px 10%;
-    padding: 0px 10% 0px 10%;
+    position: absolute;
+    float: left;
+    left: -6%;
+    top: 5%;
+    height: 70%;
+    width: 59%;
+    box-sizing: content-box;
+    margin: 5% 15%;
+    /*background-color: aqua;*/
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.line{
+    position: relative;
+    margin: 0.05vw;
+}
+
+#topBar{
+
 }
 

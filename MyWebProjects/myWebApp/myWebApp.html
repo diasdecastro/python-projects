@@ -11,14 +11,21 @@
 </head>
 <body>
     <div id="root">
-              
-        <div id="contentBox"></div>
+        <div id="topBar"></div>
+        <div id="centerBox">
+            <div id="centerContent"></div>
+        </div>
+
         <script>
-            unsortedArr = createUnsortedArray();
-            drawLines(unsortedArr);                
+            let unsortedArr = [];
+            function generateNewArray(){
+                unsortedArr = createUnsortedArray();
+                drawLines(unsortedArr, -1, -1);
+            }
         </script>
-        <button onclick="generateArray();">Generete new Array</button>
-        <button onclick="bubbleSort(unsortedArr);">Bubble Sort</button> 
+        <button onclick="generateNewArray();">Generate new Array</button>
+        <button onclick="bubbleSort(unsortedArr);">Bubble Sort</button>
+        <button onclick="quickSort(unsortedArr, 0, unsortedArr.length - 1)">Quick Sort</button>
     </div>
 </body>
 </html>
