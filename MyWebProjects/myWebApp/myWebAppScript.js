@@ -222,6 +222,5 @@ async function heapsort(arr, speed) {
 }*/
 
 // TODO: code in mehrere dataien teilen
-// TODO: controls ist unnötig
-// TODO: balken + fernseher farben ändern
-// TODO: längen und breiten checken. (auf 2tes bildschirm falsch)(gelöst?)
+// TODO: controls ist macht nichts
+// TODO: farbverhältnisse
