@@ -3,29 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>myWebApp</title>
+    <meta name="description" content="">
+    <title>Sorting Visualizer</title>
     
     <link rel="stylesheet" type="text/css" href="myWebAppStyle.css">
     <script type="text/javascript" src="myWebAppScript.js"></script>
 
+    <script type="text/javascript"><!--
+    // Image Preloader version 1.0
+    // Copyright 2009 Bontrager Connection, LLC
+    // https://www.willmaster.com/
+    //
+    // Leave the next line as is.
+    var preload = new Array();
+
+    // List the images to be loaded, each
+    //   image assigned to preload[#], with
+    //   consecutive numbering starting at 0.
+
+    preload[0] = "./images/tvTemplateOn1.jpg";
+    preload[1] = "./images/tvTemplateOn2.jpg";
+    preload[2] = "./images/tvTemplateOn3.jpg";
+    preload[3] = "./images/tvTemplateOn0.jpg";
+
+    // Leave the next 5 lines as they are.
+    var loadedimages = new Array();
+    for(var i=0; i<preload.length; i++) {
+        loadedimages[i] = new Image();
+        loadedimages[i].src = preload[i];
+    }
+    //--></script>
+
+
+
 </head>
 <body>
-    <div id="root">
-        <div id="topBar"></div>
-        <div id="centerBox">
-            <div id="centerContent"></div>
-        </div>
+    <script>
+        let unsortedArr = [];
+        function generateNewArray(){
+            unsortedArr = createUnsortedArray();
+            drawLines(unsortedArr, -1, -1);
+        }
+    </script>
 
-        <script>
-            let unsortedArr = [];
-            function generateNewArray(){
-                unsortedArr = createUnsortedArray();
-                drawLines(unsortedArr, -1, -1);
-            }
-        </script>
-        <button onclick="generateNewArray();">Generate new Array</button>
-        <button onclick="bubbleSort(unsortedArr);">Bubble Sort</button>
-        <button onclick="quickSort(unsortedArr, 0, unsortedArr.length - 1)">Quick Sort</button>
+    <div id="root">
+        <header id="topBar">
+            <img class="logo" src="./images/straw.png" alt="logo">
+            <nav class="nav_elem">
+                <ul>
+                    <li class="generateArray" onclick="generateNewArray();">Generate Array</li>
+                    <li class="sortArray" onclick="sortArray(unsortedArr);">Sort Array</li>
+                    <li class="controls" onclick="">Controls</li>
+                </ul>
+            </nav>
+            <div class="about"><a class="about" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">About me</a></div>
+        </header>
+        <p id="algInfo">Select Algorithm</p>
+        <div id="centerBox" class="tvOffCh0">
+            <div id="centerContent"></div>
+            <div id="channel" onclick="changeChannel()"></div>
+            <div id="power" onclick="changePower()"></div>
+            <div id="chNum">
+                <p id="ch0">0</p>
+                <p id="ch1">1</p>
+                <p id="ch2">2</p>
+                <p id="ch3">3</p>
+            </div>
+            <div id="onOff">
+                <p id="off">Off</p>
+                <p id="on">On</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>

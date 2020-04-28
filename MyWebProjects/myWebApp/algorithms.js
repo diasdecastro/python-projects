@@ -1,102 +1,6 @@
-import {bubbleSort} from "./algorithms";
-import {quickSort} from "./algorithms";
-import {heapsort} from "./algorithms";
+import { drawLines } from "/myWebAppScript";
 
-export function drawLines(arr, x, y, rightPivot, leftPivot){
-    let array = arr.slice();
-    let container = document.getElementById("centerContent");
-    let line = undefined;
-    container.innerHTML = '';
-    for(let i = 0; i < array.length; i++){
-        let my_length = (array[i]/6.7).toString() + "em";
-        line = document.createElement("div");
-        line.className = "line";
-        if(i === x || i === y){
-            line.style.borderLeftWidth = (1/6.5).toString() + "em";
-            line.style.borderLeftStyle = "solid";
-            line.style.borderLeftColor = "red";
-        }
-        else if(i === rightPivot){
-            line.style.borderLeftWidth = (1/6.5).toString() + "em";
-            line.style.borderLeftStyle = "solid";
-            line.style.borderLeftColor = "aqua";
-        }
-        else if(i === leftPivot){
-            line.style.borderLeftWidth = (1/6.5).toString() + "em";
-            line.style.borderLeftStyle = "solid";
-            line.style.borderLeftColor = "orange";
-        }
-        else{
-            line.style.borderLeftWidth = (1/6.5).toString() + "em";
-            line.style.borderLeftStyle = "solid";
-            line.style.borderLeftColor = "black";
-        }        
-        line.style.height = my_length;
-        container.appendChild(line);
-    }
-}
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-var initialArray;
-
-export function createUnsortedArray(){
-    let arr = [];
-    for(let i = 0; i < 200; i++){
-        arr[i] = i + 1;
-    }
-    arr.sort(() => Math.random() - 0.5);
-    initialArray = arr.slice();
-    return arr;
-}
-
-export function changeChannel(){
-    let container = document.getElementById("centerBox");
-    let header = document.getElementById("algInfo")
-    switch (container.className) {
-        case "tvOnCh0":
-            container.className = "tvOnCh1";
-            header.innerHTML = "Bubble Sort";
-            break;
-        case "tvOnCh1":
-            container.className = "tvOnCh2";
-            header.innerHTML = "Quicksort";
-            break;
-        case "tvOnCh2":
-            container.className = "tvOnCh3";
-            header.innerHTML = "Heapsort";
-            break;
-        case "tvOnCh3":
-            container.className = "tvOnCh0";
-            header.innerHTML = "Select Algorithm";
-            break;
-
-    }
-}
-
-export function changePower(){
-    let container = document.getElementById("centerBox");
-    if(container.className === "tvOffCh0"){
-        container.className = "tvOnCh0";
-    }
-    else{
-        container.className = "tvOffCh0";
-        document.getElementById("centerContent").innerHTML = "";
-    }
-}
-
-export async function sortArray(arr){
-    let container = document.getElementById("centerBox");
-    if(container.className === "tvOnCh1"){
-        await bubbleSort(arr, 0);
-    }
-    else if(container.className === "tvOnCh2"){
-        await quickSort(arr, 0, arr.length -1, 1);
-    }
-    else if(container.className === "tvOnCh3"){
-        await heapsort(arr);
-    }
-}
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/*Array.prototype.swap = function(x, y) {
+Array.prototype.swap = function(x, y) {
     let b = this[x];
     this[x] = this[y];
     this[y] = b;
@@ -107,7 +11,7 @@ function sleep(callback, arr, x, y, rightPivot, leftPivot, ms) {
     setTimeout(() => {callback(arr, x, y, rightPivot, leftPivot)}, ms)
 }
 
-async function bubbleSort(arr, speed){
+export async function bubbleSort(arr, speed){
     for(let i = arr.length; i > 1; i--){
         for(let j = 0; j < arr.length - 1; j++){
             if(arr[j] > arr[j + 1]){
@@ -115,12 +19,12 @@ async function bubbleSort(arr, speed){
                 const arrCopy = arr.slice();
                 await sleep(drawLines,arrCopy, j, j+1, -1, -1, speed);
             }
-        }       
+        }
     }
     setTimeout(() => {drawLines(arr, -1, -1);});
 }
 
-async function quickSort(arr, firstElIndex, lastElIndex, speed){
+export async function quickSort(arr, firstElIndex, lastElIndex, speed){
     let array = arr;
     let currentIndex = 0;
     async function partition(firstElIndex, lastElIndex) {
@@ -165,7 +69,7 @@ async function quickSort(arr, firstElIndex, lastElIndex, speed){
 }
 
 
-async function heapsort(arr, speed) {
+export async function heapsort(arr, speed) {
     let myArray = arr.slice();
     let end = myArray.length - 1;
 
@@ -219,9 +123,5 @@ async function heapsort(arr, speed) {
             }
         }
     }
-}*/
+}
 
-// TODO: code in mehrere dataien teilen
-// TODO: controls ist unnötig
-// TODO: balken + fernseher farben ändern
-// TODO: längen und breiten checken. (auf 2tes bildschirm falsch)(gelöst?)
