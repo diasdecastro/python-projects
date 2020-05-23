@@ -1,4 +1,6 @@
 from random import randint
+from copy import deepcopy
+
 games = [
     [[0, 3, 0, 8, 1, 0, 0, 6, 0],
     [0, 0, 0, 2, 0, 0, 8, 0, 3],
@@ -54,8 +56,10 @@ games = [
 
 class Sudoku:
     def __init__(self):
+        gamesCopy = []
         rand_num = randint(0,4)
-        self.game_field = games[rand_num]
+        gamesCopy.append(deepcopy(games[rand_num]))
+        self.game_field = gamesCopy[0]
 
         self.sec_0 = [
             [0, 0], [0, 1], [0, 2],
