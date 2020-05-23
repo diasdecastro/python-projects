@@ -2,9 +2,10 @@ import pygame
 from time import sleep, time
 import datetime
 import sudoku
-
+pygame.init()
+pygame.display.set_caption("Sudoku Solver")
 pygame.font.init()
-# magic number for convenient placement. sorry
+
 global gap
 gap = 5
 
