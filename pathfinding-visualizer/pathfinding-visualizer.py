@@ -2,6 +2,7 @@ import pygame
 import time
 import queue
 pygame.init()
+pygame.display.set_caption("Pathfinding Visualizer")
 
 global gap
 gap = 0.5
