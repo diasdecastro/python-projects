@@ -10,6 +10,8 @@ Pygame \
 
 # Instructions
 
+**Run file sudokuGUI.py to start the game** \
+\
 **Select empty field by clicking on it** \
 \
 **Type a number and press enter to commit your choice** \
