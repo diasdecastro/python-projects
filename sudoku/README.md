@@ -1,4 +1,4 @@
-# Sudoku solver with python
+# Sudoku Solver with Python
 
 Welcome to Sudoku solver! This is the first application where I implemented a known algorithms (**the Backtracking algorithm**) to solve a problem. I also built this application to get some experience with an interacting GUI in Python.
 
