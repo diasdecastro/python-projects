@@ -6,7 +6,7 @@ Welcome to Sudoku solver! This is the first application where I implemented a kn
 
 Python 3.x \
 \
-Pygame \
+Pygame
 
 # Instructions
 
