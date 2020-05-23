@@ -1,11 +1,11 @@
 # Pathfinding Visualizer
 
-Welcome to the Pathfinding Visualizer!
+Welcome to the Pathfinding Visualizer! Here you watch how pathfinding algorithms search for the path to the goal.
 
 # Requirements
 
-Python 3.x \ 
-Pygame \
+Python 3.x \
+Pygame
 
 # Instructions
 
